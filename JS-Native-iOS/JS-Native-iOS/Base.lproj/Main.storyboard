@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JS_Native_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YI-c5-lNq">
+                                <rect key="frame" x="0.0" y="66" width="393" height="786"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9D-aJ-6wq">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZZ-pA-p4k">
+                                        <rect key="frame" x="319.33333333333331" y="31" width="65.666666666666686" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="LPA-C7-NAO"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Inject"/>
+                                        <connections>
+                                            <action selector="injectAct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qlf-aA-zxj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="kZZ-pA-p4k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="W9D-aJ-6wq" secondAttribute="leading" constant="20" symbolic="YES" id="U9F-KY-boH"/>
+                                    <constraint firstAttribute="trailing" secondItem="kZZ-pA-p4k" secondAttribute="trailing" constant="8" id="qd6-Hl-k7D"/>
+                                    <constraint firstAttribute="bottom" secondItem="kZZ-pA-p4k" secondAttribute="bottom" id="zNw-dJ-eIY"/>
+                                    <constraint firstAttribute="height" constant="66" id="zkw-eb-DLE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W9D-aJ-6wq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="69c-Nw-SxU"/>
+                            <constraint firstItem="6YI-c5-lNq" firstAttribute="top" secondItem="W9D-aJ-6wq" secondAttribute="bottom" id="YGj-gb-bG5"/>
+                            <constraint firstItem="6YI-c5-lNq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="i9k-Sy-E4Q"/>
+                            <constraint firstItem="6YI-c5-lNq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mkQ-rc-SCO"/>
+                            <constraint firstItem="W9D-aJ-6wq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nb5-eY-toa"/>
+                            <constraint firstAttribute="bottom" secondItem="6YI-c5-lNq" secondAttribute="bottom" id="nf6-fv-9XU"/>
+                            <constraint firstItem="W9D-aJ-6wq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vae-0y-qsr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="view" destination="6YI-c5-lNq" id="e3C-es-y7Z"/>
+                        <outlet property="webView" destination="6YI-c5-lNq" id="IGm-I6-jvp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
