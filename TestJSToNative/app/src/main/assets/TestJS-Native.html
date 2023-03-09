@@ -1,0 +1,70 @@
+<html>
+<head>
+</head>
+<body>
+    <script type="text/javascript">
+        function showToast(toast) {
+            javascript: jsinterface.showToast(Date.now().toString());
+            document.body.append(" after JS interface ");
+        }
+
+        function testUrlRouter() {
+            location.href = "myapp://" + Date.now().toString();
+            document.body.append("after test.urlrouter !");
+        }
+
+        function testUrlRouterWithIframe() {
+            var iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = "myapp://" + Date.now().toString();
+            document.body.appendChild(iframe);
+            document.body.append("after test.urlrouter with iframe !");
+            setTimeout(() => {
+                document.body.removeChild(iframe);
+                iframe = null;
+            }, 0);
+        }
+
+        function sleep(time) {
+            var timeStamp = new Date().getTime();
+            var endTime = timeStamp + time;
+            while (true) {
+                if (new Date().getTime() > endTime) {
+                    return;
+                }
+            }
+        }
+
+        function testJSPrompt() {
+            var result = window.prompt("myapp://test.jsprompt", Date.now().toString());
+            document.body.append("after test.jsprompt from native: " + result)
+        }
+
+        function methodFromNA(message) {
+            document.body.append("after methodFromNA: " + message);
+            sleep(2000)
+
+        }
+        
+        function methodFromNAForInject(message) {
+            document.body.append("after methodFromNA: " + message);
+            sleep(2000)
+            return " JS OK "
+        }
+
+    </script>
+
+    <div> Test Android JS interface </div>
+    <input type="button" value="Test Android JS interface button" onClick="showToast('Hello world')" />
+
+    <div> Test UrlRouter </div>
+    <input type="button" value="Test JS UrlRouter button" onClick="testUrlRouter()" />
+
+    <div> Test JS Prompt </div>
+    <input type="button" value="Test JS Prompt button" onClick="testJSPrompt()" />
+
+    <div> Test UrlRouter with iframe </div>
+    <input type="button" value="Test UrlRouter with iframe" onClick="testUrlRouterWithIframe()" />
+
+</body>
+</html>
