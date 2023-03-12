@@ -3,10 +3,10 @@
 </head>
 <body>
     <script type="text/javascript">
-        function showToast(toast) {
-            javascript: jsinterface.showToast(Date.now().toString());
-            document.body.append(" after JS interface ");
-        }
+<!--        function showToast(toast) {-->
+<!--            javascript: jsinterface.showToast(Date.now().toString());-->
+<!--            document.body.append(" after JS interface ");-->
+<!--        }-->
 
         function testUrlRouter() {
             location.href = "myapp://" + Date.now().toString();
@@ -40,6 +40,24 @@
             document.body.append("after test.jsprompt from native: " + result)
         }
 
+        function testMessageHandler() {
+            var promise = window.webkit.messageHandlers.MessageHandler.postMessage(Date.now().toString());
+            document.body.append("after test Message Handler ")
+        }
+        
+        function testMessageHandlerWithCallback() {
+            var promise = window.webkit.messageHandlers.MessageHandlerWithReply.postMessage(Date.now().toString());
+            promise.then(function(result) {
+                var getTime = parseFloat(result);
+                var duration = Date.now() - getTime;
+                document.body.append(" SUCCESS after test MessageHandler from native, duration: " + duration + "ms")
+            },
+            function(err) {
+                document.body.append("ERROR after test MessageHandler from native, duration: " + err)
+            });
+            document.body.append("after test Message Handler with callback ")
+        }
+        
         function methodFromNA(message) {
             document.body.append("after methodFromNA: " + message);
             sleep(2000)
@@ -49,6 +67,11 @@
             document.body.append("after methodFromNA: " + message);
             sleep(2000)
             return " JS OK "
+        }
+        
+        function methodFromNAForInjectAtDocumentEnd(message) {
+            document.body.append("after methodFromNAForInjectAtDocumentEnd: " + message);
+            sleep(2000)
         }
 
     </script>
@@ -62,8 +85,8 @@
     </style>
     
 
-    <div> Test Android JS interface </div>
-    <input type="button" value="Test Android JS interface button" onClick="showToast('Hello world')" />
+<!--    <div> Test Android JS interface </div>-->
+<!--    <input type="button" value="Test Android JS interface button" onClick="showToast('Hello world')" />-->
 
     <div> Test UrlRouter </div>
     <input type="button" value="Test JS UrlRouter button" onClick="testUrlRouter()" />
@@ -73,6 +96,12 @@
 
     <div> Test UrlRouter with iframe </div>
     <input type="button" value="Test UrlRouter with iframe" onClick="testUrlRouterWithIframe()" />
+    
+    <div> Test message Hanlder </div>
+    <input type="button" value="Test message Hanlder" onClick="testMessageHandler()" />
+    
+    <div> Test message Hanlder with call back </div>
+    <input type="button" value="Test message Hanlder with call back" onClick="testMessageHandlerWithCallback()" />
 
 </body>
 </html>
