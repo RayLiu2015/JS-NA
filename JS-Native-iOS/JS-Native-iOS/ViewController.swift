@@ -25,8 +25,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         webViewConfig.userContentController.add(self, name: "MessageHandler")
         
         // 在 document 特定生命周期注入 JS
-        let userScript = WKUserScript(source: "methodFromNAForInjectAtDocumentEnd('document end')", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        webViewConfig.userContentController.addUserScript(userScript)
+//        let userScript = WKUserScript(source: "methodFromNAForInjectAtDocumentEnd('document end')", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+//        webViewConfig.userContentController.addUserScript(userScript)
         
         let webView = WKWebView(frame: CGRectMake(0, buttonView.bounds.size.height, self.view.bounds.width, self.view.bounds.height - buttonView.bounds.size.height), configuration: webViewConfig)
         
@@ -39,16 +39,16 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
     }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if let url = navigationAction.request.url, url.absoluteString.hasPrefix("myapp:") {
-            if let host = navigationAction.request.url?.host as? NSString {
-                let getTime = host.doubleValue
-                let currentTime = Date.now.timeIntervalSince1970 * 1000
-                print(" url router duration：\(currentTime - getTime)")
-            }
-            Thread.sleep(forTimeInterval: 3)
-            decisionHandler(.cancel)
-            return
-        }
+//        if let url = navigationAction.request.url, url.absoluteString.hasPrefix("myapp:") {
+//            if let host = navigationAction.request.url?.host as? NSString {
+//                let getTime = host.doubleValue
+//                let currentTime = Date.now.timeIntervalSince1970 * 1000
+//                print(" url router duration：\(currentTime - getTime)")
+//            }
+//            Thread.sleep(forTimeInterval: 3)
+//            decisionHandler(.cancel)
+//            return
+//        }
      
         decisionHandler(.allow)
     }

@@ -3,4 +3,54 @@
    uuid = "FA030073-0E10-457C-90EE-1C74E42F5706"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C5452CC-2C5C-4D5C-82E0-1093A4EC06F7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JS-Native-iOS/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "userContentController(_:didReceive:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4C5452CC-2C5C-4D5C-82E0-1093A4EC06F7 - 62faa02fb69d8e22"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JS_Native_iOS.ViewController.userContentController(_: __C.WKUserContentController, didReceive: __C.WKScriptMessage) -&gt; ()"
+                  moduleName = "JS-Native-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuruilong/Code/Github/JS-NA/JS-Native-iOS/JS-Native-iOS/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "4C5452CC-2C5C-4D5C-82E0-1093A4EC06F7 - 62faa02fb69d8e22"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JS_Native_iOS.ViewController.userContentController(_: __C.WKUserContentController, didReceive: __C.WKScriptMessage) -&gt; ()"
+                  moduleName = "JS-Native-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuruilong/Code/Github/JS-NA/JS-Native-iOS/JS-Native-iOS/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "328">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body>
+    <script type="text/javascript">
+
+        function testMessageHandler() {
+            var promise = window.webkit.messageHandlers.MessageHandler.postMessage(Date.now().toString());
+            document.body.append("after test Message Handler ")
+        }
+        
+    </script>
+    <style>
+        input {
+            font-size: 45px;
+        }
+        body {
+            font-size: 45px;
+        }
+    </style>
+    
+    <p>in iframe: </p>
+    <p> Test message Hanlder </p>
+    <input type="button" value="Test message Hanlder" onClick="testMessageHandler()" />
+    
+</body>
+</html>

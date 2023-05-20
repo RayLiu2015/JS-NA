@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC9307152A1866C5007214E2 /* TestJS-Native-iframe.html in Resources */ = {isa = PBXBuildFile; fileRef = FC9307142A1866C5007214E2 /* TestJS-Native-iframe.html */; };
 		FCA82D2F29B8CFD900175DE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA82D2E29B8CFD900175DE2 /* AppDelegate.swift */; };
 		FCA82D3129B8CFD900175DE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA82D3029B8CFD900175DE2 /* SceneDelegate.swift */; };
 		FCA82D3329B8CFD900175DE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA82D3229B8CFD900175DE2 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC9307142A1866C5007214E2 /* TestJS-Native-iframe.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "TestJS-Native-iframe.html"; sourceTree = "<group>"; };
 		FCA82D2B29B8CFD900175DE2 /* JS-Native-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JS-Native-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA82D2E29B8CFD900175DE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA82D3029B8CFD900175DE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		FCA82D2D29B8CFD900175DE2 /* JS-Native-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FC9307142A1866C5007214E2 /* TestJS-Native-iframe.html */,
 				FCA82D4229B8D2A600175DE2 /* TestJS-Native.html */,
 				FCA82D2E29B8CFD900175DE2 /* AppDelegate.swift */,
 				FCA82D3029B8CFD900175DE2 /* SceneDelegate.swift */,
@@ -130,6 +133,7 @@
 			files = (
 				FCA82D3B29B8CFDC00175DE2 /* LaunchScreen.storyboard in Resources */,
 				FCA82D3829B8CFDC00175DE2 /* Assets.xcassets in Resources */,
+				FC9307152A1866C5007214E2 /* TestJS-Native-iframe.html in Resources */,
 				FCA82D4329B8D2A600175DE2 /* TestJS-Native.html in Resources */,
 				FCA82D3629B8CFD900175DE2 /* Main.storyboard in Resources */,
 			);
