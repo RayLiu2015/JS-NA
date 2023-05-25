@@ -64,9 +64,14 @@
         }
         
         function methodFromNAForInject(message) {
-            document.body.append("after methodFromNA: " + message);
-            sleep(2000)
-            return " JS OK "
+            var iframes = document.getElementsByTagName('iframe');
+            if(iframes && iframes.length > 0) {
+                for(var i = 0; i < iframes.length; i ++) {
+                    var element = iframes[i];
+                    element.contentWindow.postMessage(message, "*");
+                }
+            }
+            return " JS OK ";
         }
         
         function methodFromNAForInjectAtDocumentEnd(message) {

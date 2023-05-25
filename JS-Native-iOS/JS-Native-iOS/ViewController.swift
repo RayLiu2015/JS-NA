@@ -21,12 +21,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
         
         let webViewConfig = WKWebViewConfiguration()
-        webViewConfig.userContentController.addScriptMessageHandler(self, contentWorld: WKContentWorld.page, name: "MessageHandlerWithReply")
         webViewConfig.userContentController.add(self, name: "MessageHandler")
+        webViewConfig.userContentController.addScriptMessageHandler(self, contentWorld: WKContentWorld.page, name: "MessageHandlerWithReply")
         
         // 在 document 特定生命周期注入 JS
-//        let userScript = WKUserScript(source: "methodFromNAForInjectAtDocumentEnd('document end')", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-//        webViewConfig.userContentController.addUserScript(userScript)
+        let userScript = WKUserScript(source: "methodFromNAForInjectAtDocumentEnd('document end')", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        webViewConfig.userContentController.addUserScript(userScript)
         
         let webView = WKWebView(frame: CGRectMake(0, buttonView.bounds.size.height, self.view.bounds.width, self.view.bounds.height - buttonView.bounds.size.height), configuration: webViewConfig)
         

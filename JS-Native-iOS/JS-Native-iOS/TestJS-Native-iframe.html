@@ -9,6 +9,16 @@
             document.body.append("after test Message Handler ")
         }
         
+        function methodFromNAForInject(message) {
+            document.body.append("after methodFromNA: " + message);
+            sleep(2000)
+            return " JS OK "
+        }
+        
+        window.addEventListener('message',function(e){
+            document.body.append("after methodFromNA: " + e.data);
+        });
+        
     </script>
     <style>
         input {
