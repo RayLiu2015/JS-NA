@@ -1,3 +1,3 @@
 # JS-NA
 
-Communication between WebView and Native Android/iOS App
+Communication between WebView and Native Android/iOS App.
